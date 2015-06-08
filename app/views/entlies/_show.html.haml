@@ -1,0 +1,15 @@
+.row
+  .col-md-8
+    %p#notice= notice
+    %p
+      %b Content
+      %br
+        = simple_format(h(@ently.content))
+        %br
+        -if @ently.user == current_user
+          = link_to 'Edit', edit_ently_path(@ently)
+          \|
+          = link_to 'destroy', ently_path(@ently), method: :delete, data: { :confirm => 'Are you sure?' }
+
+  .col-md-4
+    = render 'entlies/user_entlies'

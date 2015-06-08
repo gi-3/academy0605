@@ -1,0 +1,13 @@
+%h1 entlies
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+  %tbody
+    - @user.entlies.each do |ently|
+      %tr
+        %td= "■"
+        %td= link_to truncate(ently.content.lines.first, lingth: 10), user_ently_path(ently.user, ently)
+

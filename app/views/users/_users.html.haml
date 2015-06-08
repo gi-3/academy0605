@@ -1,0 +1,13 @@
+.container
+  .row
+    %h3 Users
+    .column
+      %table
+        %tbody
+          - User.all.each do |user|
+            %tr
+              = render user
+
+
+
+
